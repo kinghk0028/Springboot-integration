@@ -1,0 +1,23 @@
+rocketmq:
+  name-server: 127.0.0.1:9876 # 访问地址
+  producer:
+    group: Pro_Group # 必须指定group
+    send-message-timeout: 3000 # 消息发送超时时长，默认3s
+    retry-times-when-send-failed: 3 # 同步发送消息失败重试次数，默认2
+    retry-times-when-send-async-failed: 3 # 异步发送消息失败重试次数，默认2
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-redisson
+  redis:
+    redisson:
+      config: |
+        singleServerConfig:
+          password: 213456
+          address: "redis://127.0.0.1:6379"
+          database: 1
+        threads: 0
+        nettyThreads: 0
+        codec: !<org.redisson.codec.FstCodec> {}
+        transportMode: "NIO"

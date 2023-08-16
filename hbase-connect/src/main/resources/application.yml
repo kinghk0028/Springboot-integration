@@ -1,0 +1,11 @@
+hbase:
+  config:
+    hbase:
+      zookeeper:
+        quorum: 127.0.0.1
+        port: 2181
+        znode: /hadoop/data_ha
+      master: 127.0.0.1:16000
+      client:
+        keyvalue:
+          maxsize: 1572864000
