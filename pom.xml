@@ -17,6 +17,7 @@
         <module>rabbitmq-demo</module>
         <module>rocketmq-demo</module>
         <module>hbase-connect</module>
+        <module>kafka-demo</module>
     </modules>
 
     <properties>

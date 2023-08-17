@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /
+  port: 2001
+
+spring:
+  application:
+    name: kafka-demo
+  # 连接kafka集群
+  kafka:
+    # 多个主机用逗号隔开
+    bootstrap-servers: 127.0.0.1:9092
+    # 生产者
+    producer:
+      # key与value的序列化
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    # 消费者
+    consumer:
+      # key与value的反序列化
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: boot-test-group
